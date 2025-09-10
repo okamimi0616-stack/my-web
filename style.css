@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.cover {
+  width: 90vw;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  background: rgba(255,255,255,0.15);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+  opacity: 0.5;
+  filter: blur(4px) brightness(0.8);
+  z-index: 0;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+}
+
+.song-title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.artist {
+  font-size: 1.1rem;
+  font-weight: 700;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%);
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(255,78,80,0.3);
+  cursor: pointer;
+  transition: transform 0.15s;
+  margin: 0 auto 1.5rem auto;
+}
+.play-btn:hover {
+  transform: scale(1.08);
+}
+.play-btn svg {
+  width: 36px;
+  height: 36px;
+  fill: #fff;
+}
+
+.sns-share {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.sns-share a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.2s;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.sns-share a:hover {
+  background: #fff;
+  color: #ff4e50;
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .cover {
+    max-width: 95vw;
+    border-radius: 18px;
+  }
+  .song-title {
+    font-size: 1.3rem;
+  }
+}
