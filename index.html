@@ -8,39 +8,39 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="cover">
-		<div class="cover-content">
-			<div class="song-title">キラキラドリームステージ☆彡</div>
-			<div class="artist">よしこ</div>
-			<button class="play-btn" id="playBtn" aria-label="再生">
-				<svg viewBox="0 0 60 60"><polygon points="15,10 50,30 15,50"/></svg>
-			</button>
-			<audio id="audio" src="キラキラドリームステージ.mp3"></audio>
-			<div class="sns-share">
-				<a href="#" title="Instagramでシェア" onclick="shareInstagram()">
-					<svg width="24" height="24" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm6.25 1.25a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/></svg>
-				</a>
-				<a href="https://twitter.com/intent/tweet?text=キラキラドリームステージ☆彡%20by%20よしこ" target="_blank" title="X(Twitter)でシェア">
-					<svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.46 5.92c-.8.36-1.67.6-2.58.71a4.48 4.48 0 0 0 1.97-2.48c-.87.52-1.84.9-2.87 1.1A4.48 4.48 0 0 0 12 9.03c0 .35.04.7.11 1.03C8.09 9.9 4.6 8.13 2.13 5.36c-.38.65-.6 1.4-.6 2.2c0 1.52.77 2.86 1.95 3.65c-.72-.02-1.4-.22-1.99-.55v.06c0 2.13 1.52 3.91 3.54 4.31c-.37.1-.76.16-1.16.16c-.28 0-.55-.03-.81-.08c.55 1.7 2.16 2.94 4.07 2.97A9.01 9.01 0 0 1 2 19.54a12.73 12.73 0 0 0 6.92 2.03c8.3 0 12.85-6.88 12.85-12.85c0-.2 0-.41-.01-.61c.88-.64 1.65-1.44 2.26-2.35z"/></svg>
-				</a>
-			</div>
+	<header class="insta-header">
+		<div class="insta-logo">Insta💩</div>
+		<div class="insta-profile">
+			<img src="https://randomuser.me/api/portraits/women/68.jpg" alt="profile" class="profile-img">
+			<span class="profile-name">よしこ</span>
 		</div>
-	</div>
-	<script>
-		const playBtn = document.getElementById('playBtn');
-		const audio = document.getElementById('audio');
-		playBtn.addEventListener('click', () => {
-			if (audio.paused) {
-				audio.play();
-				playBtn.innerHTML = '<svg viewBox="0 0 60 60"><rect x="15" y="10" width="10" height="40"/><rect x="35" y="10" width="10" height="40"/></svg>';
-			} else {
-				audio.pause();
-				playBtn.innerHTML = '<svg viewBox="0 0 60 60"><polygon points="15,10 50,30 15,50"/></svg>';
-			}
-		});
-		function shareInstagram() {
-			alert('Instagramでの直接シェアはWebからはできませんが、ストーリーや投稿でこの曲を紹介してね！');
-		}
-	</script>
+	</header>
+	<main class="insta-main">
+		<div id="poop-fall-container"></div>
+		<section class="insta-post">
+			<div class="cover">
+				<div class="cover-content">
+					<div class="song-title">キラキラドリームステージ☆彡</div>
+					<div class="artist">よしこ</div>
+					<button class="play-btn" id="playBtn" aria-label="再生">
+						<svg viewBox="0 0 60 60"><polygon points="15,10 50,30 15,50"/></svg>
+					</button>
+					<audio id="audio" src="キラキラドリームステージ.mp3"></audio>
+				</div>
+			</div>
+			<div class="insta-actions">
+				<button class="like-btn" id="likeBtn" aria-label="いいね"><span id="likeIcon">♡</span> <span id="likeCount">0</span></button>
+				<button class="comment-btn" aria-label="コメント">💬</button>
+			</div>
+			<div class="insta-comments">
+				<ul id="commentList"></ul>
+				<form id="commentForm">
+					<input type="text" id="commentInput" placeholder="コメントを追加..." maxlength="50" required>
+					<button type="submit">投稿</button>
+				</form>
+			</div>
+		</section>
+	</main>
+	<script src="main.js"></script>
 </body>
 </html>
