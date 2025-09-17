@@ -1,15 +1,17 @@
 // うんこが降ってくるアニメーション
 const poopContainer = document.getElementById('poop-fall-container');
 function createPoop() {
-  const poop = document.createElement('div');
-  poop.className = 'poop';
-  poop.textContent = '💩';
-  poop.style.left = Math.random() * 90 + 'vw';
-  poop.style.animationDuration = (1.8 + Math.random() * 1.5) + 's';
-  poopContainer.appendChild(poop);
-  setTimeout(() => poop.remove(), 2500);
+  for (let i = 0; i < 3; i++) {
+    const poop = document.createElement('div');
+    poop.className = 'poop';
+    poop.textContent = '💩';
+    poop.style.left = Math.random() * 90 + 'vw';
+    poop.style.animationDuration = (1.8 + Math.random() * 1.5) + 's';
+    poopContainer.appendChild(poop);
+    setTimeout(() => poop.remove(), 2500);
+  }
 }
-setInterval(createPoop, 600);
+setInterval(createPoop, 200);
 
 // 再生ボタン
 const playBtn = document.getElementById('playBtn');
